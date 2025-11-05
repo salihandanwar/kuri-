@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>കുറി ഗ്രൂപ്പ്</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Malayalam:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    /* 🌈 Background Animation */
+    body {
+      font-family: 'Noto Sans Malayalam', sans-serif;
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background: linear-gradient(120deg, #f8e1ff, #e3f6ff, #fffbe6);
+      background-size: 400% 400%;
+      animation: bgflow 15s ease infinite;
+    }
+
+    @keyframes bgflow {
+      0% {background-position: 0% 50%;}
+      50% {background-position: 100% 50%;}
+      100% {background-position: 0% 50%;}
+    }
+
+    /* 🌟 Container */
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      max-width: 850px;
+      margin: 50px auto;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.15);
+      padding: 36px 28px;
+      animation: fadeIn 1.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(30px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* ✨ Floating Background Circles */
+    .circle {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: float 8s infinite ease-in-out;
+      z-index: 0;
+    }
+    .circle:nth-child(1) {width: 80px; height: 80px; background: #ff99cc; top: 10%; left: 10%; animation-delay: 0s;}
+    .circle:nth-child(2) {width: 100px; height: 100px; background: #99ddff; top: 60%; left: 70%; animation-delay: 2s;}
+    .circle:nth-child(3) {width: 60px; height: 60px; background: #aaffc3; top: 40%; left: 30%; animation-delay: 4s;}
+
+    @keyframes float {
+      0%, 100% {transform: translateY(0);}
+      50% {transform: translateY(-30px);}
+    }
+
+    /* 🌈 Title (NO Animation Now) */
+    h1 {
+      text-align: center;
+      color: #d32f2f;
+      font-size: 2.6em;
+      margin-bottom: 12px;
+      font-weight: 800;
+      position: relative;
+      z-index: 2;
+    }
+
+    h2 {
+      text-align: center;
+      color: #1e90ff;
+      margin-top: -6px;
+      font-weight: 700;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.1);
+    }
+
+    h3 {
+      color: #D84F00;
+      margin-top: 28px;
+      text-shadow: 1px 1px #ffd2b1;
+    }
+
+    /* 🌟 Hover Card Glow */
+    .highlight {
+      background: linear-gradient(120deg, #fff7e6, #ffe6e6);
+      border-left: 6px solid #ff8c00;
+      padding: 16px 20px;
+      margin: 22px 0;
+      border-radius: 12px;
+      font-weight: bold;
+      color: #e07800;
+      box-shadow: 0 3px 12px rgba(255, 153, 0, 0.2);
+      transition: all 0.4s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .highlight:hover {
+      transform: scale(1.05);
+      box-shadow: 0 5px 25px rgba(255, 102, 0, 0.4);
+    }
+
+    /* 🏦 Bank Info */
+    .bank {
+      background: linear-gradient(120deg, #e6f3ff, #fff4e6);
+      padding: 22px;
+      border-radius: 15px;
+      margin-top: 22px;
+      line-height: 1.7;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      border: 1px solid #dcecff;
+      transition: all 0.4s ease;
+    }
+
+    .bank:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 25px rgba(0,0,0,0.2);
+    }
+
+    .contact {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 17px;
+      margin: 8px 0;
+    }
+
+    /* 💬 WhatsApp Buttons */
+    .whatsapp-btn {
+      background: linear-gradient(90deg, #25D366, #1EBE5D);
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.3s;
+      font-size: 18px;
+      box-shadow: 0 0 10px rgba(37, 211, 102, 0.4);
+    }
+
+    .whatsapp-btn:hover {
+      transform: rotate(15deg) scale(1.2);
+      box-shadow: 0 0 20px rgba(37, 211, 102, 0.7);
+    }
+
+    /* 📞 CTA Button */
+    .cta {
+      display: block;
+      text-align: center;
+      background: linear-gradient(90deg, #1fa06b, #2a80f2, #ff6ec4);
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      border-radius: 15px;
+      padding: 16px;
+      text-decoration: none;
+      margin: 26px auto 0;
+      width: 90%;
+      transition: all 0.4s ease;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+      background-size: 300% 100%;
+      animation: gradientShift 4s infinite alternate;
+    }
+
+    @keyframes gradientShift {
+      0% {background-position: 0%;}
+      100% {background-position: 100%;}
+    }
+
+    .cta:hover {
+      transform: scale(1.08);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    /* 📱 Floating WhatsApp */
+    .whatsapp-float {
+      position: fixed;
+      width: 70px;
+      height: 70px;
+      bottom: 20px;
+      right: 20px;
+      background: linear-gradient(45deg, #25D366, #1EBE5D);
+      color: white;
+      border-radius: 50%;
+      font-size: 32px;
+      box-shadow: 0 6px 25px rgba(0,0,0,0.25);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      animation: pulse 2s infinite;
+      transition: transform 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.15) rotate(10deg);
+    }
+
+    @keyframes pulse {
+      0% {box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6);}
+      70% {box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);}
+      100% {box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);}
+    }
+
+    /* Divider Animation */
+    hr {
+      border: none;
+      height: 4px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #ff8a00, #e52e71, #009fff);
+      margin: 20px 0;
+      animation: moveLine 3s linear infinite;
+      background-size: 200% 100%;
+    }
+
+    @keyframes moveLine {
+      0% {background-position: 0%;}
+      100% {background-position: 200%;}
+    }
+
+    ul {line-height: 1.8;}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="circle"></div>
+    <div class="circle"></div>
+    <div class="circle"></div>
+
+    <h1>കുറി ഗ്രൂപ്പ് 💫</h1>
+    <h2>പുതിയ കുറി ഗ്രൂപ്പിലേക്ക് സ്വാഗതം!</h2>
+    <hr>
+
+    <div class="highlight">നിയമാവലി — ഒരു മാസത്തെ കുറി, 50 പേര് അടങ്ങുന്നതാണ് 📜</div>
+
+    <p>ഹായ് 👋</p>
+    <p>നമ്മൾ തുടങ്ങുന്ന പുതിയ കുറി ഗ്രൂപ്പിലേക്ക് സ്വാഗതം.</p>
+    <p>ഒരു മാസത്തെ കുറി ആണ് ഇത്. അത് നമുക്ക് കിട്ടിയില്ലെങ്കിൽ മറ്റുള്ള ഒരാൾക്ക് അതൊരു സഹായം ആകട്ടെ എന്ന് കരുതാം 🥰</p>
+
+    <ul>
+      <li>50 പേര് അടങ്ങുന്ന കുറി</li>
+      <li>ഒരു നറുക്കിന് ₹2000 രൂപ അയക്കണം</li>
+      <li>നമ്പർ 00 മുതൽ 49 വരെ</li>
+      <li>50 മുതൽ 99 വരെ ഉള്ളവർക്ക് രണ്ടാമത്തെ നമ്പർ</li>
+      <li>ഉദാ: (00 - 51), (01 - 52), (03 - 53)</li>
+      <li>ഒരു നറുക്കിന് 2 നമ്പർ ലഭിക്കും</li>
+    </ul>
+
+    <h3>മൊത്തം സമ്മാനം 🎁</h3>
+    <ul>
+      <li>മൊത്തം ₹1,00,000 രൂപ</li>
+      <li>🥇 1st Prize: ₹70,000</li>
+      <li>🥈 2nd Prize: ₹15,000</li>
+      <li>🥉 3rd Prize: ₹10,000</li>
+    </ul>
+
+    <h3>നറുക്കെടുപ്പ് വിധം 🎫</h3>
+    <p>ബിഗ് ടിക്കറ്റിലെ വിന്നറായ നമ്പറിലെ ആദ്യ 2 നമ്പർ 1st പ്രൈസിന്, മധ്യ 2 നമ്പർ 2nd പ്രൈസിന്, അവസാന 2 നമ്പർ 3rd പ്രൈസിന് നൽകും.</p>
+
+    <div class="highlight">
+      ഉദാഹരണം (6 അക്ക നമ്പർ): 098765<br>
+      1st → (09) ₹70000<br>
+      2nd → (87) ₹15000<br>
+      3rd → (65) ₹10000
+    </div>
+
+    <div class="bank">
+      <b>💰 പണമടയ്ക്കാനുള്ള മാർഗങ്ങൾ:</b><br><br>
+      <div class="contact">
+        <b>Anwar</b> — GPay: 8714003583
+        <a href="https://wa.me/918714003583" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <div class="contact">
+        <b>Salih TK (NRE)</b>
+        <a href="https://wa.me/919744003583" target="_blank" class="whatsapp-btn"><i class="fab fa-whatsapp"></i></a>
+      </div>
+      <p>A/c: 11102100182139<br>IFSC: FDRL0001110<br>Bank: Federal Bank, Cheruvannur</p>
+    </div>
+
+    <div class="highlight">NRE അക്കൗണ്ട് ഉള്ളവർ അത് ഉപയോഗിക്കുക — പണം ട്രാൻസ്ഫർ എളുപ്പമാകും 💸</div>
+
+    <a href="tel:+97477395379" class="cta">📞 കൂടുതൽ വിവരങ്ങൾക്ക് വിളിക്കൂ</a>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/97477395379" target="_blank" class="whatsapp-float" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</body>
+</html>
